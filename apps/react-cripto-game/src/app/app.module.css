@@ -1,1 +1,46 @@
 /* Your styles goes here. */
+
+.my-money {
+  background-color: #5472b1;
+  color: #fff;
+  width: 80%;
+  max-width: 960px;
+  margin: 5rem auto;
+  width: 100%;
+  border-radius: 1rem;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  img {
+    aspect-ratio: var(--img-ratio);
+    object-fit: cover;
+    height: 100%;
+    border-radius: 1rem 0 0 1rem;
+  }
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    text-transform: capitalize;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.fake-masonry {
+  --gap: clamp(1rem, 5vmin, 2rem);
+  columns: 200px;
+  gap: var(--gap);
+  width: 80%;
+  max-width: 960px;
+  margin: 5rem auto;
+}
+
+.fake-masonry > * {
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+}

@@ -1,1 +1,424 @@
 /* You can add global styles to this file, and also import other style files */
+/* makes sizing simpler */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+* {
+  margin: 0;
+}
+/* dark mode user-agent-styles */
+
+html {
+  color-scheme: dark light;
+}
+
+/* min body height */
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+
+html {
+  font-family: sans-serif;
+
+  line-height: 1.15;
+
+  -ms-text-size-adjust: 100%;
+
+  -webkit-text-size-adjust: 100%;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption,
+figure,
+main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+
+  height: 0;
+
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+
+  -webkit-text-decoration-skip: objects;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+abbr[title] {
+  border-bottom: none;
+
+  text-decoration: underline;
+
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+
+  font-size: 100%;
+
+  line-height: 1.15;
+
+  margin: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  box-sizing: border-box;
+
+  color: inherit;
+
+  display: table;
+
+  max-width: 100%;
+
+  padding: 0;
+
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+
+  padding: 0;
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  -webkit-appearance: textfield;
+
+  outline-offset: -2px;
+}
+
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+
+  font: inherit;
+}
+
+details,
+menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+input:focus,
+input.__focus {
+  outline: 4px solid rgba(117, 170, 255, 0.5);
+}
+
+button:focus,
+button.__focus {
+  outline: 4px solid rgba(117, 170, 255, 0.5);
+}
+
+button:active,
+button.__active {
+  -ms-transform: scale(0.97);
+  transform: scale(0.97);
+}
+
+::-moz-selection {
+  background-color: #75aaff;
+}
+
+::selection {
+  background-color: #75aaff;
+}
+
+noscript {
+  display: none !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: #ee6352;
+  --clr-secondary: #d16e8d;
+  --clr-accent: #f7f7ff;
+  --clr-gradient: linear-gradient(
+    -90deg,
+    var(--clr-primary),
+    var(--clr-secondary)
+  );
+  --ff-title: bungee, sans-serif;
+  --ff-body: canada-type-gibson, sans-serif;
+  --fw-body: 300;
+  --fw-bold: 800;
+  --fw-title: 400;
+  --fw-number: 800;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-body);
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-accent);
+}
+
+:focus {
+  outline: 5px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+.title,
+.credits {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1em 0 2em;
+  margin: 0;
+  background: var(--clr-gradient);
+  position: relative;
+  z-index: 1000;
+}
+
+.title {
+  font-size: calc(1rem + 3vw);
+  font-family: var(--ff-title);
+  font-weight: var(--fw-title);
+  color: white;
+  text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%);
+}
+
+.title span {
+  font-weight: var(--fw-number);
+  color: black;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 5em;
+  top: -30%;
+  z-index: -1;
+  opacity: 0.25;
+}
+
+.credits {
+  font-family: var(--ff-title);
+  width: 100%;
+  margin: 0;
+  padding: 6em 0 1em;
+  clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+  color: rgba(black, 0.7);
+}
+
+.credits p:last-child {
+  font-size: 0.8em;
+}

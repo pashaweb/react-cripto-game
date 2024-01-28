@@ -11,3 +11,6 @@ root.render(
     <App />
   </StrictMode>
 );
+
+
+//npx nx generate @nx/react:component --name=LineChart --directory=apps/reacrt-cripto-game --nameAndDirectoryFormat=as-provided --dry-run
