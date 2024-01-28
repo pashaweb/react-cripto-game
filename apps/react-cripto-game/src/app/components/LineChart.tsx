@@ -16,9 +16,12 @@ const dataUpdate = (data: LineData[], width: number, height: number, pathElement
   if (pathElement) {
     d3.select(pathElement)
       .transition()
-      .duration(500)
+      .duration(250)
       .ease(d3.easeLinear)
       .attr("d", pData);
+    //d3.select(pathElement).attr("d", pData);
+
+
   };
 }
 
@@ -101,36 +104,36 @@ export const LineChart = forwardRef<LineChartRef, LineChartProps>((props, ref) =
   // }
 
 
-  const setAxis = (data: LineData[]) => {
-    if (!xAxisRef.current || !yAxisRef.current) {
+  // const setAxis = (data: LineData[]) => {
+  //   if (!xAxisRef.current || !yAxisRef.current) {
 
-      return;
-    }
-    const marging = getMargin(30);
-    const gx = xAxisRef.current;
-    gx.setAttribute("transform", `translate(0, ${height - marging.bottom})`);
-    const gy = yAxisRef.current;
-    gy.setAttribute("transform", `translate(${marging.left}, 0)`);
-    const xMax = d3.max(data, d => d[0]);
-    const yMax = d3.max(data, d => d[1]);
-    const xScale = d3.scaleLinear()
-      .domain([0, xMax ? xMax : 100])
-      .range([marging.left, width - marging.right]);
+  //     return;
+  //   }
+  //   const marging = getMargin(30);
+  //   const gx = xAxisRef.current;
+  //   gx.setAttribute("transform", `translate(0, ${height - marging.bottom})`);
+  //   const gy = yAxisRef.current;
+  //   gy.setAttribute("transform", `translate(${marging.left}, 0)`);
+  //   const xMax = d3.max(data, d => d[0]);
+  //   const yMax = d3.max(data, d => d[1]);
+  //   const xScale = d3.scaleLinear()
+  //     .domain([0, xMax ? xMax : 100])
+  //     .range([marging.left, width - marging.right]);
 
-    const yScale = d3.scaleLinear()
-      .domain([0, yMax ? yMax : 100])
-      .range([height - marging.bottom, marging.top]);
-    const xAxis = d3.axisBottom(xScale);
-    const yAxis = d3.axisLeft(yScale);
-    d3.select(gx)
-      .transition()
-      .duration(750)
-      .call(xAxis);
-    d3.select(gy)
-      .transition()
-      .duration(750)
-      .call(yAxis);
-  }
+  //   const yScale = d3.scaleLinear()
+  //     .domain([0, yMax ? yMax : 100])
+  //     .range([height - marging.bottom, marging.top]);
+  //   const xAxis = d3.axisBottom(xScale);
+  //   const yAxis = d3.axisLeft(yScale);
+  //   d3.select(gx)
+  //     .transition()
+  //     .duration(750)
+  //     .call(xAxis);
+  //   d3.select(gy)
+  //     .transition()
+  //     .duration(750)
+  //     .call(yAxis);
+  // }
   const { width, height } = props;
   //const [pathData, setPathData] = useState<string>("");
   const pathElement = useRef<SVGPathElement | null>(null);
@@ -148,7 +151,7 @@ export const LineChart = forwardRef<LineChartRef, LineChartProps>((props, ref) =
         <g ref={xAxisRef} className={styles['x-axis']} />
         <path
           stroke="#26a69a"
-          strokeWidth='2'
+          strokeWidth='4'
           fill="none"
           ref={pathElement} />
       </svg>

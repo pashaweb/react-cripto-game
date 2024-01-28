@@ -1,6 +1,6 @@
 .card {
   --img-ratio: 3/2;
-
+  --gap: clamp(1rem, 5vmin, 2rem);
   display: grid;
   gap: 1rem;
   box-shadow: 0 0 0.5rem hsl(0 0% 0% / 35%);
@@ -29,18 +29,6 @@
     }
   }
 
-  input {
-    background-color: #384a72;
-    color: #fff;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    width: 70%;
-  }
   .ammount-container {
     display: flex;
     flex-direction: row;
@@ -52,7 +40,7 @@
     margin: 0.5rem;
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
+
     transition: background-color 0.2s ease-in-out;
     button {
       background-color: #384a72;
@@ -64,11 +52,19 @@
       font-weight: 600;
       cursor: pointer;
       transition: background-color 0.2s ease-in-out;
-
+      width: 4rem;
+      height: 4rem;
+      text-align: center;
       &:hover {
         background-color: #5472b1;
       }
     }
+  }
+
+  img {
+    aspect-ratio: var(--img-ratio);
+    object-fit: cover;
+    height: 100%;
   }
 }
 

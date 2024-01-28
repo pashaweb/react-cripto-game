@@ -14,7 +14,7 @@
   justify-content: flex-start;
   align-items: center;
   img {
-    aspect-ratio: var(--img-ratio);
+    aspect-ratio: 5/3;
     object-fit: cover;
     height: 100%;
     border-radius: 1rem 0 0 1rem;
