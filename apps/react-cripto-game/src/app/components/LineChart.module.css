@@ -1,0 +1,21 @@
+/*
+ * Replace this with your own classes
+ *
+ * e.g.
+ * .container {
+ * }
+*/
+
+svg.svg-box{
+    width: 100%;
+    height: 100%;
+    background-color: gainsboro;
+    animation: logglow 1.25s ease infinite alternate;
+}
+
+.y-axis, .x-axis{
+    text{
+        font-size: 0.6rem;
+        color: #004d40;
+    }
+}

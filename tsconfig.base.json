@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@crypto-game/*": ["apps/react-cripto-game/src/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,163 @@
+.card {
+  --img-ratio: 3/2;
+
+  display: grid;
+  gap: 1rem;
+  box-shadow: 0 0 0.5rem hsl(0 0% 0% / 35%);
+  border-radius: 0.5rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    text-transform: capitalize;
+  }
+  button.sell-button,
+  button.buy-button {
+    background-color: #384a72;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #5472b1;
+    }
+  }
+
+  input {
+    background-color: #384a72;
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    width: 70%;
+  }
+  .ammount-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: #5472b1 1px solid;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    button {
+      background-color: #384a72;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 1rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #5472b1;
+      }
+    }
+  }
+}
+
+.card > img {
+  aspect-ratio: var(--img-ratio);
+  object-fit: cover;
+  height: 100%;
+}
+
+.card > img:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card > img:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin-top: auto;
+}
+
+.card > :not(img) {
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  /* Prevent typography "orphans" */
+  text-wrap: pretty;
+}
+
+.card > :not(img):first-child {
+  margin-top: 1rem;
+}
+
+/* Enhanced `:not()` accepts a selector list,
+  but as a fallback you can chain `:not()` instead */
+.card > :last-of-type:not(img, h2, h3, h4) {
+  margin-bottom: 1rem;
+}
+
+.card > :not(h2, h3, h4) {
+  font-size: 0.9rem;
+}
+
+.card > a {
+  align-self: start;
+}
+
+.card {
+  --img-ratio: 5/2;
+  display: grid;
+  gap: 1rem;
+  box-shadow: 0 0 0.5rem hsl(0 0% 0% / 35%);
+  border-radius: 0.5rem;
+}
+
+.card > img {
+  aspect-ratio: var(--img-ratio);
+  object-fit: cover;
+  height: 100%;
+}
+
+.card > img:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card > img:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin-top: auto;
+}
+
+.card > :not(img) {
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  /* Prevent typography "orphans" */
+  text-wrap: pretty;
+}
+
+.card > :not(img):first-child {
+  margin-top: 1rem;
+}
+
+/* Enhanced `:not()` accepts a selector list,
+  but as a fallback you can chain `:not()` instead */
+.card > :last-of-type:not(img, h2, h3, h4) {
+  margin-bottom: 1rem;
+}
+
+.card > :not(h2, h3, h4) {
+  font-size: 0.9rem;
+}
+
+.card > a {
+  align-self: start;
+}
