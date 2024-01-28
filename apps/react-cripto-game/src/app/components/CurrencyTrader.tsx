@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './CurrencyTrader.module.css';
-import { CryptoNames } from '../hooks/useCriptosHook';
 import ChartHolder from './ChartHolder';
+import { CryptoNames } from '../store/store';
 
 type CurrencyTraderProps = {
     name: CryptoNames;
@@ -15,7 +15,6 @@ export function CurrencyTrader(props: CurrencyTraderProps) {
     const { name, coins, buyCrypto, sellCrypto } = props;
     const [amount, setAmount] = useState(1000);
 
-
     return (
 
         <div className={styles.card}>
@@ -24,10 +23,10 @@ export function CurrencyTrader(props: CurrencyTraderProps) {
             <ChartHolder name={name} />
 
             <p>
-                <strong>
-                    Coins: <br /> {coins}
-                </strong>
+                <label>Coin:</label>
+                <br /> <b>{coins}</b>
             </p>
+
             <div className={styles['ammount-container']}>
                 <button onClick={() => setAmount(amount + 10)}>+10</button>
                 <div>${amount}</div>
@@ -49,3 +48,4 @@ export function CurrencyTrader(props: CurrencyTraderProps) {
     );
 
 }
+

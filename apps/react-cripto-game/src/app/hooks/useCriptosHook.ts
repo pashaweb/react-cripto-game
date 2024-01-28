@@ -74,7 +74,7 @@ const setCurrentPrices = (state: Map<CryptoNames, number>, data: Crypto[]) => {
 }
 
 
-const getLocalData = (): MoneyData | null => {    
+const getLocalData = (): MoneyData | null => {
     const localData = localStorage.getItem('crypto-game');
     if (localData) {
         const data = JSON.parse(localData);
@@ -94,7 +94,7 @@ type MoneyData = {
         bitcoin: number,
         ethereum: number,
         dogecoin: number,
-        
+
     },
     fee: number
 }
@@ -106,12 +106,12 @@ const moneyDataInit: MoneyData = {
         ethereum: 0,
         dogecoin: 0,
     },
-    
+
     fee: 0.01
 }
 
 export const useCryptoHook = () => {
-    
+
 
     const [cryptos, setCryptos] = useState(criptoMapInit);
     const [currentCryptoPrice, setCurrentCryptoPrice] = useState(currentPricesInit);
@@ -140,10 +140,10 @@ export const useCryptoHook = () => {
         }
         setMoneyData(newMoneyData);
         setLocalData(newMoneyData);
-     
+
     }
 
-    const sellCurrency = (currency: CryptoNames, amount: number,) => {  
+    const sellCurrency = (currency: CryptoNames, amount: number,) => {
         const currentPrice = currentCryptoPrice.get(currency)!;
         const totalValInUsd = moneyData.usd;
         const totalValInCrypto = moneyData.coins[currency];
@@ -160,7 +160,7 @@ export const useCryptoHook = () => {
         coins[currency] = totalValInCryptoAfterTransfer;
         const newMoneyData = {
             ...moneyData,
-            usd: totalValInUsdAfterTransfer, 
+            usd: totalValInUsdAfterTransfer,
             coins
         }
         setMoneyData(newMoneyData);
@@ -169,17 +169,24 @@ export const useCryptoHook = () => {
 
 
     const getCryptos = useCallback(
-    async () => {
-            const response = await fetch(
-                "https://api.coincap.io/v2/assets?limit=10"
-            );
-            const data = await response.json();
-            const newCryptos = setCriptoMap(cryptos, data.data as Crypto[]);
-            setCryptos(newCryptos);
-            const newCurrentPrices = setCurrentPrices(currentCryptoPrice, data.data as Crypto[]);
-            setCurrentCryptoPrice(newCurrentPrices);
+        async () => {
+            try {
+                const response = await fetch(
+                    "https://api.coincap.io/v2/assets?limit=10"
+                );
+                const data = await response.json();
+                const newCryptos = setCriptoMap(cryptos, data.data as Crypto[]);
+                setCryptos(newCryptos);
+                const newCurrentPrices = setCurrentPrices(currentCryptoPrice, data.data as Crypto[]);
+                setCurrentCryptoPrice(newCurrentPrices);
+            }
+            catch (error) {
+                console.log(error);
+            }
+
+
         }, [cryptos, currentCryptoPrice]
-    ) 
+    )
 
 
 
@@ -187,7 +194,7 @@ export const useCryptoHook = () => {
 
 
     useEffect(() => {
-        const interval  = setInterval(() => {
+        const interval = setInterval(() => {
             getCryptos();
         }, 1000);
         const localData = () => {
@@ -200,7 +207,7 @@ export const useCryptoHook = () => {
 
         return () => clearInterval(interval);
     }, [getCryptos]);
-    
+
     return {
         cryptos,
         currentCryptoPrice,

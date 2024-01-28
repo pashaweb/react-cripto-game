@@ -1,13 +1,14 @@
 {
-    "eslint.format.enable": true,
-    "eslint.ignoreUntitled": true,
-    "eslint.run": "onSave",
-    "eslint.workingDirectories": [
-
-    ],
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "[css]": {
-        "editor.defaultFormatter": "svipas.prettier-plus"
-    }
+  "eslint.format.enable": true,
+  "eslint.ignoreUntitled": true,
+  "eslint.run": "onSave",
+  "eslint.workingDirectories": [],
+  "editor.defaultFormatter": "svipas.prettier-plus",
+  "editor.formatOnSave": true,
+  "[css]": {
+    "editor.defaultFormatter": "svipas.prettier-plus"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }
