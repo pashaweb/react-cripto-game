@@ -3,6 +3,9 @@ import LineChart, { LineChartRef, LineData } from "./LineChart";
 import { CryptoNames, useCryptoStore } from "../store/store";
 type ChartHolderProps = {
     name: CryptoNames;
+    currentPrice: number;
+    chartData: number[] | undefined;
+
 }
 
 const dataConverter = (data: number[]): LineData[] => {
@@ -14,9 +17,9 @@ const dataConverter = (data: number[]): LineData[] => {
     })
 }
 const ChartHolder = (props: ChartHolderProps) => {
-    const { name } = props;
+    const { currentPrice, chartData } = props;
     const linearChartRef = useRef<LineChartRef | null>(null);
-    const { cryptoMap, currentPrices } = useCryptoStore();
+    //const { cryptoMap, currentPrices } = useCryptoStore();
     const setChartData = (data: LineData[]) => {
         const el = linearChartRef.current;
         if (!el) {
@@ -27,20 +30,18 @@ const ChartHolder = (props: ChartHolderProps) => {
 
 
     useEffect(() => {
-        const data = cryptoMap.get(name);
-        if (!data) {
-            return;
-        }
+        const data = chartData ? chartData : [];
+
         const lineData = dataConverter(data);
         setChartData(lineData);
     }
-        , [cryptoMap, name]);
+        , [chartData]);
 
     return (
         <div className="chart-holder">
             <div>
                 Current Price:<br />
-                <strong></strong>{currentPrices.get(name)}
+                <strong>{currentPrice}</strong>
             </div>
             <LineChart width={200} height={70} ref={linearChartRef} />
 
