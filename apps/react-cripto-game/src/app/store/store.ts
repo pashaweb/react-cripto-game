@@ -1,4 +1,4 @@
-
+//app store
 import { create } from 'zustand'
 import { byCrypto, byUsd } from "../utils";
 
