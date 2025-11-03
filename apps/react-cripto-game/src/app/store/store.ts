@@ -131,7 +131,7 @@ export function initStore() {
 
     setInterval(async () => {
         const response = await fetch(
-            "https://api.coincap.io/v2/assets?limit=10"
+            "https://rest.coincap.io/v3/assets?apiKey=b8064051f32b1989bfe6afd443e6cf0720a9998d11e9f33a6eab615602bd51c8&limit=10"
         );
         const data = await response.json();
         useCryptoStore.getState().setCryptoMap(data.data);
